@@ -1,0 +1,159 @@
+
+.viewjob-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+  background-color: black;
+  color: white;
+}
+
+@media (min-width: 1024px) {
+  .viewjob-container {
+    flex-direction: row;
+  }
+}
+
+.job-details {
+  flex: 2;
+  background-color: rgb(7, 7, 7);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #050505;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #292929;
+  margin-bottom: 1.5rem;
+}
+
+.job-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.job-header-left img {
+  width: 64px;
+  height: 64px;
+  border-radius: 9999px;
+}
+
+.job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  color: #4b5563;
+  margin-top: 0.25rem;
+}
+
+.job-header-right {
+  text-align: right;
+}
+
+.apply-button {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: none;
+}
+
+.job-section-title {
+  font-size: 27px;
+  color: #1fedf1;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.job-text {
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.job-list {
+  list-style-type: decimal;
+  padding-left: 1rem;
+  color: #f5f6f8;
+  margin-bottom: 1rem;
+  font-size: 18px;
+}
+
+.related-jobs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.related-job-card {
+  background-color: rgb(11, 11, 11);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.related-job-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.related-job-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+}
+
+.badge-blue {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.badge-red {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.related-job-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.related-job-actions button {
+  font-size: 0.875rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+.btn-apply {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+}
+
+.btn-learn {
+  border: 1px solid #2563eb;
+  color: #2563eb;
+  background-color: transparent;
+}
+.status-pending  { background:#ecc31f; cursor:default; }
+.status-reviewed { background:#c8e6ff; cursor:default; }
+.status-hired    { background:#19f119; cursor:default; }
+.status-rejected { background:#ef2222; cursor:default; }
+

@@ -1,0 +1,133 @@
+
+.view-applicants-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1.5rem 1rem;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  color: #1e293b;
+}
+
+.view-applicants-container h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.view-applicants-container label {
+  font-weight: 600;
+}
+.view-applicants-container select {
+  margin-top: .3rem;
+  padding: .45rem .6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+}
+.applicants-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+  justify-content: center;
+}
+
+.applicant-card {
+  flex: 1 1 340px;          
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,.06);
+  padding: 1rem;
+  transition: transform .15s;
+}
+.applicant-card:hover { transform: translateY(-4px); }
+
+.applicant-card header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.applicant-card header img {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #3b82f6;
+}
+
+.applicant-card h3   { margin: 0; font-size: 1.1rem; }
+.applicant-card p    { margin: .15rem 0; font-size: .9rem; }
+.skills { color:#10b981; font-weight:500; }
+
+.application-block {
+  background:#f1f5f9;
+  border-radius:8px;
+  padding:.8rem;
+  margin-top:.9rem;
+}
+.application-block h4   { margin:0 0 .25rem; font-size: 1rem; }
+.application-block small{ color:#64748b; display:block; margin-bottom:.35rem;}
+.application-block select{
+  width:100%;
+  padding:.4rem;
+  border:1px solid #cbd5e1;
+  border-radius:6px;
+}
+
+footer {
+  margin-top:auto;          
+  display:flex;
+  gap:.55rem;
+  flex-wrap:wrap;
+}
+footer a,
+footer button {
+  flex:1 1 auto;
+  text-align:center;
+  font-size:.85rem;
+  padding:.45rem .6rem;
+  border-radius:6px;
+  border:none;
+  cursor:pointer;
+  color:#fff;
+  transition:background .15s;
+}
+.accept-btn{
+  background-color: rgb(11, 240, 11);
+}
+.reject-btn{
+  background-color: red;
+}
+.resume-btn   { background:#6366f1; }
+.contact-btn  { background:#06b6d4; }
+.view-btn     { background:#3b82f6; }
+
+.resume-btn:hover  { background:#4f46e5; }
+.contact-btn:hover { background:#0891b2; }
+.view-btn:hover    { background:#2563eb; }
+
+@media (max-width:768px){
+  .applicant-card { flex:1 1 100%; max-width:98%; }
+}
+.contact-btn {
+  position: relative;
+}
+
+.chat-alert {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: red;
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  animation: pulse 1s infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}

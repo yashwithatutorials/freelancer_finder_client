@@ -1,0 +1,38 @@
+.domain{
+    background-color: black;
+    text-align: center;
+    margin: 0;
+}
+.images{
+    display: flex;
+    flex-wrap: wrap;
+    gap:80px;
+   padding: 50px;
+   justify-content: center;
+   align-items: center;
+}
+.ima{
+    border: 1px solid rgb(3, 246, 238);
+    padding: 10px;
+    border-radius: 15px;
+     box-shadow: 3px 2px #05f3d3;
+}
+.ima:hover{
+    transform: scale(1.1);
+    border:none;
+    box-shadow: none;
+}
+.ima img{
+    width:450px;
+    height: 300px;
+}
+.ima h2{
+    color: white;
+    padding: 20px;
+}
+@media screen and (max-width:768px) {
+    .ima img{
+        width: 350px;
+        height: 250px;
+    }
+}

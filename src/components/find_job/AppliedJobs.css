@@ -1,0 +1,35 @@
+
+ .applied-jobs-page {
+  min-height: 100vh; 
+  padding: 2rem;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.job-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  gap: 20px;
+  color: black;
+
+}
+.job-card {
+  background: #f4f4f4;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.chat-btn {
+  margin-top: 10px;
+  background-color: #0066ff;
+  color: rgb(249, 247, 247);
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.chat-btn:hover {
+  background-color: #0051cc;
+}

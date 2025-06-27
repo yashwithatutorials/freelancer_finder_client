@@ -1,0 +1,260 @@
+.job_page {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+  background-color: #000;
+  color: white;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background-color: #000;
+  color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  width: 250px;
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.sidebar h3,
+.sidebar label,
+.sidebar select {
+  color: #fff;
+}
+
+.sidebar h3 {
+  color: skyblue;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.sidebar input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 8px;
+  accent-color: white;
+}
+
+.job_listings {
+  flex: 1;
+}
+
+.job_cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 10px;
+}
+
+.job_card {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #47ecec;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 9px skyblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.job_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px skyblue;
+}
+
+.job_card h3,
+.job_card p,
+.job_card span {
+  color: #fff;
+  text-align: center;
+}
+
+.job_card h3 {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.job_card p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.job_tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.job_tags span {
+  background-color: #222;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.job_card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 2px solid #47ecec;
+  transition: opacity 0.3s ease;
+  background-color: #222;
+  background-image: url("/default-avatar.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.job_card img:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.job_card img[src=""] {
+  background-image: url("/default-avatar.png");
+}
+
+/* Loading state for images */
+.job_card img.loading {
+  opacity: 0.6;
+  background-color: #333;
+}
+
+/* Error state for images */
+.job_card img.error {
+  background-color: #444;
+  border-color: #666;
+}
+
+/* Add some styling for missing images */
+.job_card .image-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 2px solid #47ecec;
+  background-color: #333;
+  background-image: url("/default-avatar.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 12px;
+}
+
+.job_buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+  width: 100%;
+  justify-content: center;
+}
+
+.job_buttons button {
+  background-color: transparent;
+  border: 1px solid rgb(62, 232, 218);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  flex: 1;
+  max-width: 150px;
+}
+
+.job_buttons button:hover {
+  background-color: white;
+  color: black;
+}
+
+@media (max-width: 1200px) {
+  .job_cards {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .job_page {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: static;
+    margin-bottom: 20px;
+  }
+
+  .job_cards {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .job_page {
+    padding: 15px;
+  }
+
+  .sidebar h3 {
+    font-size: 22px;
+  }
+
+  .job_card {
+    padding: 15px;
+  }
+
+  .job_card img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .job_buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .job_buttons button {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .job_cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .job_card {
+    max-width: 100%;
+  }
+
+  .sidebar input[type="checkbox"] {
+    transform: scale(1.3);
+    margin-right: 10px;
+  }
+
+  .job_tags span {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+}
+.company-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  background: white;
+  border-radius: 4px;
+  padding: 5px;
+}

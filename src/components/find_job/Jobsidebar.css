@@ -1,0 +1,19 @@
+.sidebar {
+  padding: 1rem;
+  background-color: #f7f7f7;
+  border-right: 1px solid #ccc;
+  width: 250px;
+}
+
+.filter-group {
+  margin-bottom: 1rem;
+}
+
+.filter-group h4 {
+  margin-bottom: 0.5rem;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+}

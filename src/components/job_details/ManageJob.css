@@ -1,0 +1,178 @@
+
+.manage-jobs {
+  max-width: 1300px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background: #f9fafb;
+}
+.manage-jobs h2 {
+  margin-bottom: 2rem;
+  font-size: clamp(2rem, 2.5vw, 2.5rem);
+  text-align: center;
+  background: linear-gradient(to right, #4f46e5, #9333ea);
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+
+.job-card {
+  background: #ffffff;
+  border-radius: 1.2rem;
+  padding: 2rem;
+  box-shadow: 0 12px 28px rgba(100, 100, 255, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  max-width: 700px;
+ 
+}
+
+.job-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 40px rgba(100, 100, 255, 0.12);
+}
+
+.job-card header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #1e40af;
+}
+
+.job-card .meta {
+  margin: 0.5rem 0 1rem;
+  color: #6366f1;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.job-card .desc {
+  background: #ffffff;                
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04); 
+  margin-bottom: 1rem;
+  color: #374151;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid #e5e7eb;          
+}
+
+
+
+.job-card h4 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #7c3aed;
+  font-size: 1.1rem;
+  border-bottom: 2px solid #ddd6fe;
+  padding-bottom: 0.25rem;
+}
+
+.job-card ul {
+  padding-left: 1.2rem;
+  margin: 0;
+  list-style-type: disc;
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.delete-btn {
+  margin-top: 1.5rem;
+  background: linear-gradient(to right, #ef4444, #dc2626);
+  color: white;
+  border: none;
+  padding: 0.65rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.delete-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.4);
+}
+
+
+.status {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.1rem;
+  color: #6b7280;
+}
+
+.status.error {
+  color: #dc2626;
+}
+
+.popup-notification {
+  position: fixed;
+ top: 20%;
+ left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  text-align: center;
+  min-width: 300px;
+  max-width: 80%;
+  animation: fadeIn 0.3s;
+}
+
+.popup-notification.success {
+  background-color: #4CAF50;
+}
+
+.popup-notification.error {
+  background-color: #f44336;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.popup-confirm, .popup-cancel {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.popup-confirm {
+  background-color: white;
+  color: #f44336;
+}
+
+.popup-cancel {
+  background-color: #555;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+

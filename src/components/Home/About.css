@@ -1,0 +1,65 @@
+.about_page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1450px;
+  margin: 0 auto; 
+  background-color: black;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 40px 20px;
+}
+
+.about_text, .about_img {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.about_text h2 {
+  font-size: 34px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-family:Edu NSW ACT Hand Precursive;
+}
+
+.about_text p {
+  font-size: 28px;
+  line-height: 1.6;
+  color: #f1f1f1;
+  font-weight: Pacifico;
+}
+
+.about_img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+
+@media screen and (max-width: 1204px) {
+  .about_page {
+    display: block;
+    text-align: center;
+  }
+.about_img{
+    z-index: 2;
+    width: 100%;
+    padding: 30px;
+}
+  .about_text {
+    z-index: 0;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .about_text h2 {
+    font-size: 34px;
+  }
+
+  .about_text p {
+    font-size: 23px;
+  }
+}

@@ -1,0 +1,167 @@
+
+.sin {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.box {
+  width: 100%;
+  max-width: 450px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+
+form {
+  padding: 0 20px;
+}
+
+.st {
+  font-size: 16px;
+  color: #333;
+}
+
+.la {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.la:focus {
+  border-color: #4a90e2;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+
+.btn-primary {
+  background-color: #4a90e2;
+  border: none;
+  padding: 12px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #3a7bc8;
+}
+
+.btn-default {
+  padding: 12px;
+  border: 1px solid #ddd !important;
+  color: #333 !important;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-default:hover {
+  background-color: #f0f0f0 !important;
+}
+
+
+p {
+  text-align: center;
+  margin: 15px 0;
+  color: #666;
+}
+
+.popup-notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: slideIn 0.5s, fadeOut 0.5s 2.5s;
+}
+
+.popup-notification.success {
+  background-color: #4CAF50;
+}
+
+.popup-notification.error {
+  background-color: #f44336;
+}
+
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .sin {
+    padding: 15px;
+  }
+  
+  .box {
+    height: auto !important;
+    padding: 20px 15px;
+  }
+  
+  h2 {
+    font-size: 28px !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .la {
+    padding: 10px 12px;
+  }
+  
+  .btn-primary, .btn-default {
+    padding: 5px;
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .box {
+    max-width: 100%;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  
+  form {
+    padding: 0 10px;
+  }
+  
+  h2 {
+    font-size: 24px !important;
+  }
+  
+  .st {
+    font-size: 14px;
+  }
+  
+  .la {
+    font-size: 14px;
+  }
+  
+  p {
+    font-size: 14px;
+  }
+}
