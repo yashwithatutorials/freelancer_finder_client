@@ -94,11 +94,11 @@
 
 .profile-dropdown {
   position: absolute;
-  top: 70px;
-  right: 0;
+  top: 60px;
+  right: 300px;
   background-color: #222;
   color: white;
-  padding: 15px;
+  padding: 0px;
   border-radius: 10px;
   width: 200px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.3),
@@ -145,7 +145,7 @@
 .logout-btn {
   background-color: red;
   color: white;
-  width: 100%;
+  width: 60%;
 }
 
 .view {
@@ -193,6 +193,9 @@
   .go1, .go2 {
     padding: 8px 12px;
     font-size: 14px;
+  }
+  .profile-dropdown{
+    width: 200px;
   }
 }
 

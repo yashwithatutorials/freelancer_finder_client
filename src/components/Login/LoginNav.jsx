@@ -187,7 +187,8 @@ const LoginNav = () => {
                           style={{
                             textDecoration: "none",
                             color: "white",
-                            fontWeight: "700",
+                            fontWeight: "600",
+                            fontSize:"16px"
                           }}
                         >
                           View Profile
