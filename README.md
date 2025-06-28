@@ -1,12 +1,87 @@
-# React + Vite
+📌 Freelancer Finder
+Freelancer Finder is a full-stack MERN (MongoDB, Express.js, React, Node.js) web application that connects freelancers with clients. Clients can post jobs, and freelancers can browse, apply, and manage their profiles.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🌐 Live Demo
+Frontend:https://freelancer-finder-client.vercel.app/
+Backend: https://freelancer-finder.onrender.com
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+🧰 Tech Stack
+Frontend: React, React Router, Tailwind CSS / CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Backend: Node.js, Express.js
+
+Database: MongoDB (with Mongoose)
+
+Hosting: Vercel (frontend), Render (backend)
+
+🔑 Features
+✅ For Freelancers
+Signup/Login
+
+Upload profile image and resume
+
+Add skills, experience, and bio
+
+Search and filter jobs
+
+Apply to jobs
+
+Chat with clients 
+
+✅ For Clients
+Signup/Login
+
+Create and post jobs
+
+Upload company logo
+
+View and manage applicants
+
+Chat with freelancers 
+
+🚀 Getting Started Locally
+1. Clone the Repository
+bash
+Copy
+Edit
+git clone https://github.com/yashwithatutorials/freelancer_finder_client.git
+cd freelancer_finder
+2. Frontend Setup
+bash
+Copy
+Edit
+cd client
+npm install
+npm start
+3. Backend Setup
+bash
+Copy
+Edit
+git clone https://github.com/yashwithatutorials/freelancer_finder_server.git
+cd server
+npm install
+node index.js
+Make sure to configure your .env in the backend with:
+
+env
+Copy
+Edit
+MONGODB_URI=your_mongo_uri
+📁 Folder Structure
+bash
+Copy
+Edit
+freelancer_finder/
+├── client/             # React frontend
+│   ├── components/
+│   ├── pages/
+│   └── ...
+├── server/             # Express backend
+│   ├── models/
+│   ├── routes/
+│   ├── uploads/
+│   └── ...
+
+
