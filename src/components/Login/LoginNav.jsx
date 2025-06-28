@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import logo from "../images/freelance_logo.jpg";
+import logo from "../images/sb_works.jpg";
 import "./LoginNav.css";
 
 const LoginNav = () => {
