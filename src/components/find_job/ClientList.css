@@ -109,7 +109,7 @@
   border: 2px solid #47ecec;
   transition: opacity 0.3s ease;
   background-color: #222;
-  background-image: url("/default-avatar.png");
+  /* background-image: url("/default-avatar.png"); */
   background-size: cover;
   background-position: center;
 }
@@ -119,9 +119,9 @@
   transform: scale(1.05);
 }
 
-.job_card img[src=""] {
+/* .job_card img[src=""] {
   background-image: url("/default-avatar.png");
-}
+} */
 
 /* Loading state for images */
 .job_card img.loading {
@@ -136,7 +136,7 @@
 }
 
 /* Add some styling for missing images */
-.job_card .image-placeholder {
+/* .job_card .image-placeholder {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -151,7 +151,7 @@
   justify-content: center;
   color: #888;
   font-size: 12px;
-}
+} */
 
 .job_buttons {
   display: flex;

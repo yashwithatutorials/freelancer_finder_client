@@ -6,10 +6,26 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./Viewjob.css";
 
-const fileURL = (f) =>
-  f && !f.startsWith("http")
-    ? `https://freelancer-finder.onrender.com/${f.startsWith("uploads/") ? "" : "uploads/"}${f}`
-    : f || "/default-avatar.png";
+// const fileURL = (f) =>
+//   f && !f.startsWith("http")
+//     ? `https://freelancer-finder.onrender.com/${f.startsWith("uploads/") ? "" : "uploads/"}${f}`
+//     : f || "/default-avatar.png";
+const getProfileImageUrl = (companyLogo) => {
+    if (!companyLogo) {
+      return "/default-avatar.png";
+    }
+    // If it's a base64 data URL, return as is
+    if (companyLogo.startsWith("data:")) {
+      return companyLogo;
+    }
+    // If it's a full HTTP URL, return as is (legacy support)
+    if (companyLogo.startsWith("http")) {
+      return companyLogo;
+    }
+    // For legacy filename-only data, construct URL (will likely 404 due to ephemeral filesystem)
+    const cleanFile = companyLogo.replace(/^[/\\]*(uploads[/\\]*)?/, "");
+    return `https://freelancer-finder.onrender.com/uploads/${cleanFile}`;
+  };
 const loadLocal = (email) =>
   JSON.parse(localStorage.getItem(`jobStatuses_${email}`) || "{}");
 const saveLocal = (email, o) =>
@@ -70,7 +86,21 @@ export default function ViewJob() {
       <article key={selected._id} className="job-details">
         <header className="job-header">
           <div className="job-header-left">
-            <img src={fileURL(selected.companyLogo)} alt="logo" />
+            <img
+                    src={getProfileImageUrl(selected.companyLogo)}
+                    alt="Profile"
+                    style={{
+                      borderRadius: "50%",
+                      height: "60px",
+                      width: "60px",
+                      border: "2px solid #4CAF50",
+                      objectFit: "cover",
+                    }}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = "/default-avatar.png";
+                    }}
+                  />
             <div>
               <h2>{selected.jobTitle}</h2>
               <div className="job-meta">
@@ -106,7 +136,21 @@ export default function ViewJob() {
         {related.slice(0,4).map(j => (
           <div key={j._id} className="related-job-card">
             <div className="related-job-header">
-              <img src={fileURL(j.companyLogo)} alt="logo" />
+              <img
+                    src={getProfileImageUrl(j.companyLogo)}
+                    alt="Profile"
+                    style={{
+                      borderRadius: "50%",
+                      height: "60px",
+                      width: "60px",
+                      border: "2px solid #4CAF50",
+                      objectFit: "cover",
+                    }}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = "/default-avatar.png";
+                    }}
+                  />
               <h4>{j.jobTitle}</h4>
             </div>
             <p>{j.jobDescription.slice(0,90)}…</p>

@@ -94,8 +94,8 @@
 
 .profile-dropdown {
   position: absolute;
-  top: 60px;
-  right: 300px;
+  top: 70px;
+  right: 10px;
   background-color: #222;
   color: white;
   padding: 0px;
@@ -194,9 +194,7 @@
     padding: 8px 12px;
     font-size: 14px;
   }
-  .profile-dropdown{
-    width: 200px;
-  }
+  
 }
 
 @media screen and (max-width: 768px) {
@@ -260,7 +258,7 @@
   
   .profile-dropdown {
     top: 100%;
-    left: 50%;
+    left: 50px;
     transform: translateX(-50%);
   }
   

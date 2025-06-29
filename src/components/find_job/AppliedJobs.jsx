@@ -25,10 +25,26 @@ const AppliedJobs = () => {
   })
       .catch((err) => console.error("Fetch applied jobs error", err));
   }, [user.email, user.role, navigate]);
- const fileURL = (f) =>
-    f && !f.startsWith("http")
-      ? `https://freelancer-finder.onrender.com/${f.startsWith("uploads/") ? "" : "uploads/"}${f}`
-      : f || "/default-avatar.png";
+//  const fileURL = (f) =>
+//     f && !f.startsWith("http")
+//       ? `https://freelancer-finder.onrender.com/${f.startsWith("uploads/") ? "" : "uploads/"}${f}`
+//       : f || "/default-avatar.png";
+const getProfileImageUrl = (companyLogo) => {
+    if (!companyLogo) {
+      return "/default-avatar.png";
+    }
+    // If it's a base64 data URL, return as is
+    if (companyLogo.startsWith("data:")) {
+      return companyLogo;
+    }
+    // If it's a full HTTP URL, return as is (legacy support)
+    if (companyLogo.startsWith("http")) {
+      return companyLogo;
+    }
+    // For legacy filename-only data, construct URL (will likely 404 due to ephemeral filesystem)
+    const cleanFile = companyLogo.replace(/^[/\\]*(uploads[/\\]*)?/, "");
+    return `https://freelancer-finder.onrender.com/uploads/${cleanFile}`;
+  };
   return (
     <div className="applied-jobs-page">
       <h2>My Applied Jobs</h2>
@@ -38,7 +54,22 @@ const AppliedJobs = () => {
         <div className="job-list">
           {appliedJobs.map((job) => (
            <div key={job._id} className="job-card" >
-           <img src={fileURL(job.companyLogo)} alt="logo" style={{width:"50px"}}/>
+           {/* <img src={fileURL(job.companyLogo)} alt="logo" style={{width:"50px"}}/> */}
+           <img
+                    src={getProfileImageUrl(job.companyLogo)}
+                    alt="Profile"
+                    style={{
+                      borderRadius: "50%",
+                      height: "60px",
+                      width: "60px",
+                      border: "2px solid #4CAF50",
+                      objectFit: "cover",
+                    }}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = "/default-avatar.png";
+                    }}
+                  />
            <h3>{job.companyName}</h3>
   <h3>{job.jobTitle || "Untitled Job"}</h3>
 

@@ -32,13 +32,29 @@ export default function Jobportal() {
 //   f?.startsWith("https") ? f
 //   : f ? `https://freelancer-finder.onrender.com/uploads/${f.replace(/^uploads[\\/]/, "")}`
 //   : "/default-avatar.png";
-const fileURL = (filename) => {
-  if (!filename) return "/default-company-logo.png";
-  if (filename.startsWith("http")) return filename;
+// const fileURL = (filename) => {
+//   if (!filename) return "/default-company-logo.png";
+//   if (filename.startsWith("http")) return filename;
   
-  const baseUrl = `https://freelancer-finder.onrender.com/uploads/${filename.replace(/^uploads[\\/]/, "")}`;
-  return `${baseUrl}?v=${Date.now()}`; // Cache busting
-};
+//   const baseUrl = `https://freelancer-finder.onrender.com/uploads/${filename.replace(/^uploads[\\/]/, "")}`;
+//   return `${baseUrl}?v=${Date.now()}`; // Cache busting
+// };
+const getProfileImageUrl = (companyLogo) => {
+    if (!companyLogo) {
+      return "/default-avatar.png";
+    }
+    // If it's a base64 data URL, return as is
+    if (companyLogo.startsWith("data:")) {
+      return companyLogo;
+    }
+    // If it's a full HTTP URL, return as is (legacy support)
+    if (companyLogo.startsWith("http")) {
+      return companyLogo;
+    }
+    // For legacy filename-only data, construct URL (will likely 404 due to ephemeral filesystem)
+    const cleanFile = companyLogo.replace(/^[/\\]*(uploads[/\\]*)?/, "");
+    return `https://freelancer-finder.onrender.com/uploads/${cleanFile}`;
+  };
 console.log("Job data:", jobs.map(job => ({
   id: job._id,
   title: job.jobTitle,
@@ -60,7 +76,7 @@ console.log("Job data:", jobs.map(job => ({
             <div key={job._id} className="job_card">
               {/* <img src={fileURL(job.companyLogo)} alt="logo" /> */}
              
-<img 
+{/* <img 
   src={fileURL(job.companyLogo)} 
   alt={`${job.companyName} logo`}
   onError={(e) => {
@@ -68,7 +84,22 @@ console.log("Job data:", jobs.map(job => ({
     e.target.src = "/default-company-logo.png";
   }}
   className="company-logo" // Add specific class
-/>
+/> */}
+<img
+                    src={getProfileImageUrl(job.profileImage)}
+                    alt="Profile"
+                    style={{
+                      borderRadius: "50%",
+                      height: "60px",
+                      width: "60px",
+                      border: "2px solid #4CAF50",
+                      objectFit: "cover",
+                    }}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = "/default-avatar.png";
+                    }}
+                  />
               <h3 style={{ fontWeight: 700, fontSize: 32 }}>{job.companyName}</h3>
               <h3>{job.jobTitle}</h3>
               <div className="job_tags">
