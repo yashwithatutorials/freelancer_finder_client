@@ -278,8 +278,6 @@ export default function ViewJob() {
         rejected: "REJECTED",
       }[s] || "APPLY"
     );
-
-  /* ───── render ───── */
   return (
     <div className="viewjob-container">
       <article key={selected._id} className="job-details">
@@ -303,8 +301,8 @@ export default function ViewJob() {
             <div>
               <h2>{selected.jobTitle}</h2>
               <div className="job-meta">
-                <span>🏢 {selected.companyName}</span>
-                <span>📍 {selected.location}</span>
+                <span style={{color:"white"}}>🏢 {selected.companyName}</span>
+                <span style={{color:"white"}}>📍 {selected.location}</span>
               </div>
             </div>
           </div>
@@ -313,13 +311,13 @@ export default function ViewJob() {
             className={`btn-apply status-${statuses[selected._id] ?? "new"}`}
             disabled={!!statuses[selected._id]}
             onClick={() => apply(selected)}
-          >
+          style={{fontSize:"22px"}}>
             {pretty(statuses[selected._id])}
           </button>
         </header>
 
         <h3 className="job-section-title">Job description</h3>
-        <p>{selected.jobDescription}</p>
+        <p style={{color:"white"}}>{selected.jobDescription}</p>
 
         <h3 className="job-section-title">Key Requirements</h3>
         <ol>
@@ -329,7 +327,7 @@ export default function ViewJob() {
         </ol>
 
         <h3 className="job-section-title">Skills</h3>
-        <p>{(selected.jobSkills ?? []).join(", ")}</p>
+        <p style={{color:"white"}}>{(selected.jobSkills ?? []).join(", ")}</p>
       </article>
 
       <aside className="related-jobs">
@@ -360,11 +358,11 @@ export default function ViewJob() {
               className={`btn-apply status-${statuses[j._id] ?? "new"}`}
               disabled={!!statuses[j._id]}
               onClick={() => apply(j)}
-            >
+            style={{fontSize:"21px"}}>
               {pretty(statuses[j._id])}
             </button>
 
-            <button className="btn-learn" onClick={() => setSelected(j)}>
+            <button className="btn-learn" onClick={() => setSelected(j)} style={{fontSize:"21px"}}>
               Learn more
             </button>
           </div>

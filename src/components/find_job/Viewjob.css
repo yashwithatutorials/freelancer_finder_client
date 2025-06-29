@@ -152,7 +152,7 @@
   color: #2563eb;
   background-color: transparent;
 }
-.status-pending  { background:#ecc31f; cursor:default; }
+.status-pending  { background:#c29c03; cursor:default; }
 .status-reviewed { background:#c8e6ff; cursor:default; }
 .status-hired    { background:#19f119; cursor:default; }
 .status-rejected { background:#ef2222; cursor:default; }
